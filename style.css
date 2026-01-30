@@ -37,7 +37,10 @@ body::before {
 
 /* 3. The Container (THE SPACING CONTROLLER) */
 .container {
-    width: 100%;
+    /* DYNAMIC SIZING MAGIC: 
+       Min: 400px | Ideal: 40% of screen width | Max: 700px */
+    width: clamp(400px, 40vw, 700px);
+
     max-width: 420px;
     text-align: center;
     display: flex;
@@ -253,4 +256,37 @@ summary::-webkit-details-marker {
 .socials a:hover {
     color: #ffffff;
     transform: translateY(-3px);
+}
+
+/* --- DESKTOP SCALE UP --- */
+/* These rules ONLY apply if the screen is wider than a tablet (768px) */
+@media (min-width: 768px) {
+
+    /* 1. Make the text bigger so it doesn't look "zoomed out" */
+    body {
+        font-size: 120%;
+        /* Increases base size by 20% */
+    }
+
+    h1 {
+        font-size: 3rem;
+        /* Huge name on desktop */
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    /* 2. Make buttons taller and more "premium" on desktop */
+    .btn {
+        padding: 24px;
+        /* Bigger buttons */
+        font-size: 1.2rem;
+    }
+
+    /* 3. Give the dropdown text more breathing room */
+    .topic-content {
+        padding: 30px;
+        font-size: 1.1rem;
+    }
 }
