@@ -56,7 +56,11 @@ body::before {
 }
 
 .container {
-    width: clamp(400px, 40vw, 700px);
+    /* 1. LOCK THE WIDTH */
+    /* This forces the "Phone Aspect Ratio" even on big screens */
+    width: 100%;
+    max-width: 420px;
+
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -275,33 +279,18 @@ summary::-webkit-details-marker {
 }
 
 /* =========================================
-   6. DESKTOP "ZOOM" & SCALING
+   6. DESKTOP ZOOM (The "Giant Phone" Fix)
    ========================================= */
-/* Only applies if screen is wider than an iPad (768px) */
 @media (min-width: 768px) {
+    .container {
+        /* This zooms the entire site while keeping perfect proportions */
+        transform: scale(1.35);
 
-    /* 1. Zoom the text size */
-    body {
-        font-size: 125%;
-        /* Increases all text by 25% */
-    }
+        /* Ensures it zooms from the center-top downwards */
+        transform-origin: top center;
 
-    /* 2. Make the Name Huge */
-    h1 {
-        font-size: 3rem;
-        margin-bottom: 10px;
-    }
-
-    /* 3. Make buttons taller and more "premium" */
-    .btn {
-        padding: 22px;
-        /* Taller buttons */
-        font-size: 1.1rem;
-    }
-
-    /* 4. Add breathing room to the dropdown text */
-    .topic-content {
-        padding: 25px;
-        font-size: 1.1rem;
+        /* Adds spacing so the zoomed version doesn't hit the edges */
+        margin-top: 60px;
+        margin-bottom: 100px;
     }
 }
