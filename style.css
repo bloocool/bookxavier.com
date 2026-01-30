@@ -13,17 +13,12 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px;
-
-    /* These ensure the background layer stays contained */
     position: relative;
     overflow-x: hidden;
-
-    /* Text Color */
     color: #D4AF37;
 }
 
-/* 2. THE BLURRED BACKGROUND LAYER */
-/* This pseudo-element creates a separate layer just for the image */
+/* 2. Background Layer */
 body::before {
     content: "";
     position: fixed;
@@ -31,136 +26,203 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-
-    /* Push this layer behind everything else */
     z-index: -1;
-
-    /* Image Settings */
     background-image: url('assets/background.jpg');
     background-size: cover;
     background-position: center;
     background-color: #000000;
-
-    /* THE TRICK: Darken (0.3) and Blur (8px) without affecting text */
-    filter: brightness(1) blur(12px);
-
-    /* Scale up slightly to hide blurry edges */
+    filter: brightness(0.3) blur(8px);
     transform: scale(1.05);
 }
 
-/* 3. The Content Container */
+/* 3. The Container */
 .container {
     width: 100%;
-    max-width: 400px;
+    max-width: 420px;
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-
-    /* This ensures your buttons sit ON TOP of the blurred layer */
+    gap: 15px;
     position: relative;
     z-index: 1;
 }
 
-/* 4. Profile Image */
+/* TRUST BAR (New Feature) */
+.trust-bar {
+    margin-bottom: 5px;
+    opacity: 0.9;
+}
+
+.trust-bar span {
+    font-size: 0.7rem;
+    color: #fff;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.trust-bar p {
+    font-size: 0.75rem;
+    color: #D4AF37;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+}
+
+/* Profile Image */
 .profile-pic {
     width: 120px;
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    /* Gold Border */
     border: 4px solid #D4AF37;
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-    margin-bottom: 15px;
-
-    /* Centering fix */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    margin-bottom: 10px;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* 5. Typography */
+/* Typography */
 h1 {
-    font-size: 1.8rem;
-    font-weight: 700;
+    font-size: 2rem;
+    font-weight: 800;
     color: #ffffff;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 1);
     margin-bottom: 5px;
 }
 
 .subtitle {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: #D4AF37;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 1);
+    line-height: 1.4;
+}
+
+.section-header {
+    margin: 15px 0 10px;
 }
 
 .section-header span {
     background: rgba(0, 0, 0, 0.8);
-    /* Semi-transparent black */
     padding: 5px 15px;
     border: 1px solid #D4AF37;
     border-radius: 20px;
     color: #D4AF37;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-weight: bold;
     backdrop-filter: blur(5px);
 }
 
-/* 6. BUTTONS (Restored Gold Style) */
+/* BUTTONS */
 .btn {
-    display: block;
+    display: flex;
+    /* Helps align icons and text */
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     width: 100%;
-    /* Gradient Gold Background */
     background: linear-gradient(45deg, #D4AF37, #F2D06B);
     color: #000000;
-    /* Black Text */
     text-decoration: none;
     padding: 18px;
     border-radius: 50px;
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-bottom: 12px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: all 0.2s ease;
     border: 2px solid transparent;
     cursor: pointer;
+    position: relative;
 }
 
 .btn:hover {
     transform: scale(1.02);
     box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
-    /* Gold Glow */
     background: #000000;
-    /* Turns black on hover */
     color: #D4AF37;
-    /* Text turns gold on hover */
     border: 2px solid #D4AF37;
+}
+
+/* Special Button Styling */
+.primary-btn {
+    /* Makes the main Book button slightly larger/brighter */
+    background: linear-gradient(45deg, #FFD700, #FDB931);
+    font-size: 1.1rem;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+}
+
+/* COLLAPSIBLE MENUS (New Feature) */
+details.topic-dropdown {
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+/* Removes default arrow from summary */
+summary {
+    list-style: none;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/* The content inside the dropdown */
+.topic-content {
+    background: rgba(0, 0, 0, 0.8);
+    /* Dark semi-transparent box */
+    color: #fff;
+    padding: 15px;
+    border-radius: 20px;
+    margin-top: -10px;
+    /* Pulls it up closer to the button */
+    margin-bottom: 10px;
+    border: 1px solid #D4AF37;
+    text-align: left;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.topic-content strong {
+    color: #D4AF37;
+    /* Highlights the Talk Titles */
+    display: block;
+    margin-bottom: 5px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Social Icons */
 .socials {
-    margin-top: 20px;
+    margin-top: 10px;
     display: flex;
     justify-content: center;
-    /* Ensures the group is centered in the middle of the screen */
     gap: 15px;
-    /* Reduces the gap slightly since we are adding width to the icons themselves */
 }
 
 .socials a {
-    /* 1. Force every icon into an invisible square box of the same size */
     width: 50px;
     height: 50px;
-
-    /* 2. Center the icon perfectly inside that box */
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* 3. Standard Styling */
     color: #D4AF37;
     font-size: 1.8rem;
     text-decoration: none;
