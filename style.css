@@ -332,10 +332,21 @@ summary::-webkit-details-marker {
    7. DESKTOP ZOOM
    ========================================= */
 @media (min-width: 768px) {
+
+    /* NEW: Fixes the cut-off top on laptops */
+    body {
+        align-items: flex-start;
+        /* Stops forcing it to the middle */
+        padding-top: 60px;
+        /* Adds safe space at the top */
+    }
+
     .container {
         transform: scale(1.3);
         transform-origin: top center;
-        margin-top: 60px;
+
+        /* Reset margins since 'body' is handling the spacing now */
+        margin-top: 0;
         margin-bottom: 100px;
     }
 }
