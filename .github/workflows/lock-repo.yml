@@ -1,0 +1,21 @@
+name: Auto-Lock Repository
+
+on:
+  # Optimized: Runs quarterly (Jan, Apr, Jul, Oct) to save resources
+  schedule:
+    - cron: '0 0 1 */3 *'
+  workflow_dispatch:
+
+jobs:
+  lock-down:
+    runs-on: ubuntu-latest
+    permissions:
+      administration: write
+    steps:
+      - name: Enable Interaction Limits
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api -X PUT /repos/${{ github.repository }}/interaction-limits \
+            -f limit="collaborators_only" \
+            -f expiry="six_months"
