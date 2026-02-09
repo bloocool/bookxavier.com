@@ -334,29 +334,27 @@ summary::-webkit-details-marker {
    ========================================= */
 .video-wrapper {
     position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
+    width: 100%;
+    /* FIXED: Switched to aspect-ratio for perfect 16:9 fit */
+    aspect-ratio: 16 / 9;
     overflow: hidden;
     border-radius: 20px;
     border: 2px solid var(--gold);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     background: black;
-    /* FIXED: Removed margin-bottom so spacing matches Index page */
 }
 
 .video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
+    border: none;
 }
 
 .form-wrapper {
     background: var(--white);
     border-radius: 20px;
     overflow: hidden;
-    margin-top: 15px;
+    /* FIXED: Removed margin-top for consistent spacing */
     border: 2px solid var(--gold);
 }
 
