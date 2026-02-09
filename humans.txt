@@ -1,0 +1,19 @@
+/* TEAM */
+  Founder/Speaker: Xavier Sanchez
+  Site: xxaviersanchezz.me
+  Handle: @xxaviersanchezz (All Platforms)
+  Location: San Antonio, TX -> Global
+
+/* CREDITS */
+  Featured On: Built For Business (TV), Fox SA
+  Previous Ops: Revolut, Cruising Kitchens
+  
+/* TECH STACK */
+  Hosted on: GitHub Pages
+  Analytics: Google Analytics 4
+  Fonts: Montserrat (Google Fonts)
+  Icons: FontAwesome
+  
+/* MISSION */
+  Bridging the gap for corporate leaders and 
+  tech startups worldwide through adaptive resilience.
