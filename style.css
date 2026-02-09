@@ -88,7 +88,6 @@ body::before {
     overflow: hidden;
 }
 
-/* FIXED: Changed from generic 'span' to specific class */
 .trust-label {
     font-size: 0.7rem;
     color: var(--white);
@@ -113,7 +112,6 @@ body::before {
     animation: scroll-infinite 20s linear infinite;
 }
 
-/* NEW: Ensures the accessibility groups line up horizontally */
 .marquee-group {
     display: flex;
     align-items: center;
@@ -343,7 +341,7 @@ summary::-webkit-details-marker {
     border: 2px solid var(--gold);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     background: black;
-    margin-bottom: 20px;
+    /* FIXED: Removed margin-bottom so spacing matches Index page */
 }
 
 .video-wrapper iframe {
