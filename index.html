@@ -14,12 +14,12 @@
         gtag('config', 'G-4LC9P1TDZS');
     </script>
 
-    <title>Xavier Sanchez | Community Leader | Public Speaker</title>
+    <title>Xavier Sanchez | Resilience Speaker & Community Leader | San Antonio</title>
 
     <meta name="description"
-        content="Xavier Sanchez (@xxaviersanchezz) is a community leader, public speaker, and inclusion advocate based in San Antonio. Book Xavier for speaking engagements.">
+        content="Book Xavier Sanchez (@xxaviersanchezz) for your next event. Community leader and keynote speaker on resilience, disability inclusion, and adaptive leadership.">
 
-    <meta property="og:title" content="Xavier Sanchez: Community Leader & Speaker">
+    <meta property="og:title" content="Xavier Sanchez: Resilience Speaker & Community Leader">
     <meta property="og:site_name" content="Xavier Sanchez Portfolio">
     <meta property="og:url" content="https://bookxavier.com/">
     <meta property="og:description"
@@ -52,7 +52,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="canonical" href="https://bookxavier.com/">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=16">
+    <link rel="stylesheet" href="style.css?v=17">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <script type="application/ld+json">
@@ -126,9 +126,9 @@
             <i class="fas fa-microphone-alt"></i> Book Xavier to Speak
         </a>
 
-        <div class="section-header">
+        <h2 class="section-header">
             <span><i class="fas fa-tv"></i> As Seen On TV <i class="fas fa-tv"></i></span>
-        </div>
+        </h2>
 
         <a href="https://www.youtube.com/watch?v=PqloTM3LX60" target="_blank" rel="noopener noreferrer"
             class="btn media-btn">
@@ -150,9 +150,9 @@
             <i class="fas fa-play-circle"></i>Watch: A Mother's Story (GD SA)
         </a>
 
-        <div class="section-header">
+        <h2 class="section-header">
             <span><i class="fa-solid fa-earth-americas"></i> Connect <i class="fa-solid fa-earth-americas"></i></span>
-        </div>
+        </h2>
 
         <a href="https://linkedin.com/in/xxaviersanchezz/" target="_blank" rel="noopener noreferrer" class="btn">
             <i class="fab fa-linkedin"></i> Connect on LinkedIn
@@ -174,7 +174,7 @@
         </footer>
 
         <div class="legal-footer">
-            <p>&copy; 2026 Xavier Sanchez. All Rights Reserved.</p>
+            <p>&copy; 2026 XS Impact International LLC. All Rights Reserved.</p>
             <p>San Antonio based &bull; Available Globally &bull; <a href="book.html">Contact</a></p>
         </div>
 
@@ -193,12 +193,10 @@
 
         const track = document.getElementById('marquee-track');
 
-        // ACCESSIBILITY FIX (Safe for all browsers)
         const mainSet = partners.map(name => {
             return `<span class="partner">${name}</span> <span class="dot">&bull;</span>`;
         }).join('');
 
-        // FIXED: Uses "marquee-group" class to prevent vertical stacking
         const decorativeSet = `<span aria-hidden="true" class="marquee-group">${mainSet}</span>`;
 
         track.innerHTML = mainSet + decorativeSet + decorativeSet + decorativeSet;
